@@ -1,17 +1,52 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://button.gd" type="Script" id=2]
+[ext_resource path="res://text.gd" type="Script" id=3]
+[ext_resource path="res://input.gd" type="Script" id=4]
 
 [node name="Main" type="CenterContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 482.0
-margin_top = 293.0
-margin_right = 542.0
-margin_bottom = 307.0
+margin_left = 384.0
+margin_top = 206.0
+margin_right = 639.0
+margin_bottom = 394.0
 
-[node name="Text" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
-margin_right = 60.0
+[node name="Input" type="Label" parent="VBoxContainer"]
+margin_right = 255.0
 margin_bottom = 14.0
-text = "Text here"
+autowrap = true
+max_lines_visible = 20
+script = ExtResource( 4 )
+
+[node name="Output" type="Label" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 255.0
+margin_bottom = 32.0
+text = "Test"
+align = 1
+script = ExtResource( 3 )
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 255.0
+margin_bottom = 60.0
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+margin_top = 64.0
+margin_right = 255.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 168.0
+margin_right = 255.0
+margin_bottom = 188.0
+text = "Press anywhere show virtual keyboard"
+script = ExtResource( 2 )
